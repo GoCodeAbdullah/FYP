@@ -38,5 +38,6 @@ function validateCoustomers(data) {
   })
   return schema.validate(data)
 }
+
 module.exports = { customerDetails }
 module.exports.Validate = validateCoustomers
