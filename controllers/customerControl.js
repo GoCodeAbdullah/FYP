@@ -9,7 +9,11 @@ const createData = async (req, res) => {
   // console.log(req.body.user_id.email)
 
   try {
-    let user = await customerDetails.findOne({ email: req.body.user_id.email })
+    let user = await customerDetails.findOne({
+      user_id: { email: req.body.user_id.email },
+    })
+    console.log(user)
+
     if (user) return res.status(400).send('user with given email already exist')
     const crud = await customerDetails.create(req.body)
 
